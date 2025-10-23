@@ -2,18 +2,9 @@ package org.example;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.List; /**
- * Калькулятор факториалов с обработкой исключительных ситуаций
- */
+import java.util.List;
 public class FactorialCalculator {
 
-    /**
-     * Вычисляет первые n факториалов
-     *
-     * @param n натуральное число (положительное целое)
-     * @return список первых n факториалов
-     * @throws IllegalArgumentException если n отрицательное или слишком большое
-     */
     public List<BigInteger> calculateFactorials(int n) {
         validateInput(n);
 
@@ -36,8 +27,7 @@ public class FactorialCalculator {
         if (n < 0) {
             throw new IllegalArgumentException("n must be non-negative. Got: " + n);
         }
-
-        // Проверка на потенциальное переполнение времени вычисления
+        
         if (n > 100000) {
             throw new IllegalArgumentException("n is too large for practical computation: " + n);
         }
